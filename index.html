@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifa de bike</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="./main.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr:first-child {
+            border-bottom: solid 1px black;
+        }
+
+        tr {
+            border-bottom: solid 1px black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Input</p>
+
+    <label>
+        Rows
+        <input oninput="render()" min="2" max="30" value="2" id="rows-number" type="number">
+    </label> 
+    <label>
+        Columns
+        <input oninput="render()" min="1" max="10" value="2" id="columns-number" type="number">
+    </label> 
+
+    <table id="input-table">
+
+    </table>
+
+    <p>Preview</p>
+    <div id="result">
+
+    </div>
+    <p>Result in text</p>
+    <textarea id="clipboard" readonly></textarea>
+    <button onclick="copyToClipboard()">Copy to clipboard</button>
+</body>
+</html>
